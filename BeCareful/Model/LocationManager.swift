@@ -36,25 +36,22 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
             manager.delegate = self
             manager.desiredAccuracy = kCLLocationAccuracyBest
             manager.distanceFilter = kCLDistanceFilterNone
+            manager.allowsBackgroundLocationUpdates = true
             manager.requestAlwaysAuthorization()
             manager.startUpdatingLocation()
             
         }
-        
-        //self.fetchNearSpots()
-
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        
-        if spots.count == 0 {
-            self.nearStatus = (false, "", 0.0)
-        }
-        
         print("----------------------------------")
         print("Current location: \(manager.location!.coordinate.latitude), \(manager.location!.coordinate.longitude)")
         
         //self.checkDistance()
+    }
+    
+    func checkDistance() {
         
     }
+    
 }

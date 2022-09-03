@@ -23,6 +23,11 @@
 		CF2CFCF428C3909800C844C2 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2CFCF328C3909800C844C2 /* SettingsView.swift */; };
 		CF2CFCF728C391AB00C844C2 /* LocationPicker in Frameworks */ = {isa = PBXBuildFile; productRef = CF2CFCF628C391AB00C844C2 /* LocationPicker */; };
 		CF2CFCFA28C394FB00C844C2 /* CLLocationCoordinate2D+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2CFCF928C394FB00C844C2 /* CLLocationCoordinate2D+Equatable.swift */; };
+		CF2CFCFE28C3981000C844C2 /* InfoRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2CFCFD28C3981000C844C2 /* InfoRow.swift */; };
+		CF2CFD0028C398EB00C844C2 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2CFCFF28C398EB00C844C2 /* AppData.swift */; };
+		CF2CFD0228C3A3C600C844C2 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2CFD0128C3A3C600C844C2 /* OnboardingView.swift */; };
+		CF2CFD0428C3A3FB00C844C2 /* OnboardingIntroduction.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2CFD0328C3A3FB00C844C2 /* OnboardingIntroduction.swift */; };
+		CF2CFD0628C3A40300C844C2 /* OnboardingSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2CFD0528C3A40300C844C2 /* OnboardingSetup.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +67,11 @@
 		CF2CFCF128C3907A00C844C2 /* SpotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotView.swift; sourceTree = "<group>"; };
 		CF2CFCF328C3909800C844C2 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		CF2CFCF928C394FB00C844C2 /* CLLocationCoordinate2D+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinate2D+Equatable.swift"; sourceTree = "<group>"; };
+		CF2CFCFD28C3981000C844C2 /* InfoRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoRow.swift; sourceTree = "<group>"; };
+		CF2CFCFF28C398EB00C844C2 /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
+		CF2CFD0128C3A3C600C844C2 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		CF2CFD0328C3A3FB00C844C2 /* OnboardingIntroduction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingIntroduction.swift; sourceTree = "<group>"; };
+		CF2CFD0528C3A40300C844C2 /* OnboardingSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSetup.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +162,7 @@
 		CF2CFCDF28C38D7E00C844C2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CF2CFCFF28C398EB00C844C2 /* AppData.swift */,
 				CF2CFCE228C38E3900C844C2 /* Spot.swift */,
 				CF2CFCE028C38D8B00C844C2 /* SpotType.swift */,
 				CF2CFCEA28C38F9900C844C2 /* LocationManager.swift */,
@@ -166,7 +177,8 @@
 				CF2CFCEF28C3906700C844C2 /* ReportNewSpot.swift */,
 				CF2CFCF128C3907A00C844C2 /* SpotView.swift */,
 				CF2CFCF328C3909800C844C2 /* SettingsView.swift */,
-				CF2CFCFB28C395D100C844C2 /* OnBoarding */,
+				CF2CFCFB28C395D100C844C2 /* Onboarding */,
+				CF2CFCFC28C3980400C844C2 /* Components */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -179,11 +191,22 @@
 			path = Logic;
 			sourceTree = "<group>";
 		};
-		CF2CFCFB28C395D100C844C2 /* OnBoarding */ = {
+		CF2CFCFB28C395D100C844C2 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				CF2CFD0128C3A3C600C844C2 /* OnboardingView.swift */,
+				CF2CFD0328C3A3FB00C844C2 /* OnboardingIntroduction.swift */,
+				CF2CFD0528C3A40300C844C2 /* OnboardingSetup.swift */,
 			);
-			path = OnBoarding;
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		CF2CFCFC28C3980400C844C2 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				CF2CFCFD28C3981000C844C2 /* InfoRow.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -328,9 +351,14 @@
 				CF2CFCFA28C394FB00C844C2 /* CLLocationCoordinate2D+Equatable.swift in Sources */,
 				CF2CFCF228C3907A00C844C2 /* SpotView.swift in Sources */,
 				CF2CFCF428C3909800C844C2 /* SettingsView.swift in Sources */,
+				CF2CFD0028C398EB00C844C2 /* AppData.swift in Sources */,
+				CF2CFCFE28C3981000C844C2 /* InfoRow.swift in Sources */,
+				CF2CFD0628C3A40300C844C2 /* OnboardingSetup.swift in Sources */,
 				CF2CFCEB28C38F9900C844C2 /* LocationManager.swift in Sources */,
+				CF2CFD0428C3A3FB00C844C2 /* OnboardingIntroduction.swift in Sources */,
 				CF2CFCEE28C3903900C844C2 /* LiveMapView.swift in Sources */,
 				CF2CFCB628C38D2D00C844C2 /* BeCarefulApp.swift in Sources */,
+				CF2CFD0228C3A3C600C844C2 /* OnboardingView.swift in Sources */,
 				CF2CFCE328C38E3900C844C2 /* Spot.swift in Sources */,
 				CF2CFCF028C3906700C844C2 /* ReportNewSpot.swift in Sources */,
 			);
@@ -506,6 +534,8 @@
 				DEVELOPMENT_TEAM = FXED6Z9HSN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Localizzazione utilizzata per navigazione";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Localizzazione utilizzata per navigazione";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -535,6 +565,8 @@
 				DEVELOPMENT_TEAM = FXED6Z9HSN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Localizzazione utilizzata per navigazione";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Localizzazione utilizzata per navigazione";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

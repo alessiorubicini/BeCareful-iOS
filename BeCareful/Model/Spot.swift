@@ -28,11 +28,7 @@ struct Spot: Identifiable, Codable {
         self.longitude = long
         self.address = address
     }
-    
-}
-
-extension Spot {
-    
+        
     var coordinate: CLLocationCoordinate2D {
         return CLLocationCoordinate2D(latitude: self.latitude, longitude: self.longitude)
     }
@@ -51,6 +47,9 @@ extension Spot {
         case .dangerousInversion: return Color.red
         }
     }
+}
+
+extension Spot {
     
     static let mocks = [
         Spot(id: UUID(), name: "Incrocio", type: .poorVisibility, danger: 1, lat: 37.331660, long: -122.032235, address: "Infinite Loop, Cupertino, CA 95014, Stati Uniti")

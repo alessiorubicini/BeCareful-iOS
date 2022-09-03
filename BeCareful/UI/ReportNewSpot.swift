@@ -15,8 +15,9 @@ struct ReportNewSpot: View {
     @Binding var spot: Spot
     
     @State private var coordinates = CLLocationCoordinate2D(latitude: 37.333747, longitude: -122.011448)
-
     @State private var coordinatesInput = false
+    
+    @Environment(\.presentationMode) var presentationMode
     
     // MARK: - View body
     
@@ -53,7 +54,7 @@ struct ReportNewSpot: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button {
-                        
+                        presentationMode.wrappedValue.dismiss()
                     } label: {
                         Text("Annulla").foregroundColor(.red).fontWeight(.semibold)
                     }
@@ -61,7 +62,7 @@ struct ReportNewSpot: View {
                 
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
-                        
+                        presentationMode.wrappedValue.dismiss()
                     } label: {
                         Text("Aggiungi").fontWeight(.semibold)
                     }
