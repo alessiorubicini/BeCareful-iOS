@@ -15,14 +15,12 @@ struct LiveMapView: View {
     
     // MARK: - View properties
     
-    @ObservedObject var data: AppData
     @ObservedObject var locationManager: LocationManager
     
     @State private var cancellable: AnyCancellable?
     @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 51.507222, longitude: -0.1275), span: MKCoordinateSpan(latitudeDelta: 0.03, longitudeDelta: 0.03))
     
     @State private var addSheet = false
-    @State private var newSpot = Spot()
     @State private var spotSheet = false
     @State private var spotSheetContent: Spot? = nil
     
@@ -40,7 +38,7 @@ struct LiveMapView: View {
                     ZStack {
 
                         // Map view
-                        Map(coordinateRegion: $locationManager.region, interactionModes: .all, showsUserLocation: true, userTrackingMode: .constant(.follow), annotationItems: locationManager.spots) { location in
+                        Map(coordinateRegion: $locationManager.region, interactionModes: .all, showsUserLocation: true, userTrackingMode: .constant(.follow), annotationItems: locationManager.data.spots) { location in
                             
                             // Spot symbol on map
                             MapAnnotation(coordinate: CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)) {
@@ -57,7 +55,6 @@ struct LiveMapView: View {
                             }
                             
                         }
-                        .edgesIgnoringSafeArea(.bottom)
                         
                         .sheet(isPresented: $spotSheet) {
                             if let spot = spotSheetContent {
@@ -67,7 +64,7 @@ struct LiveMapView: View {
                         
                         // Current user status
                         VStack {
-                            Text(locationManager.nearStatus.0 ? "Attenzione: \(locationManager.nearStatus.1) a \(locationManager.nearStatus.2, specifier: "%.0f") metri da te" : "Nessun punto pericoloso nelle vicinanze (150 metri)")
+                            Text(locationManager.nearStatus.0 ? "mapView.dangerousSpot \(locationManager.nearStatus.1.lowercased()) \(locationManager.nearStatus.2, specifier: "%.0f")" : "mapView.noDangerousSpots")
                                 .fontWeight(.semibold)
                                 .multilineTextAlignment(.center)
                                 .foregroundColor(locationManager.nearStatus.0 ? Color.red : Color.primary)
@@ -78,9 +75,9 @@ struct LiveMapView: View {
                             
                         }.padding()
                         
-                            .sheet(isPresented: $showSettings) {
-                                SettingsView()
-                            }
+                        .sheet(isPresented: $showSettings) {
+                            SettingsView()
+                        }
                         
                     }
                     
@@ -108,43 +105,45 @@ struct LiveMapView: View {
             }
             
             .sheet(isPresented: $addSheet) {
-                ReportNewSpot(spot: $newSpot)
+                ReportNewSpot(manager: self.locationManager)
             }
-            
             
             .navigationTitle("SafeDrive")
             .navigationBarTitleDisplayMode(.inline)
-        
             
-        }
-        .toolbar {
-            ToolbarItem(placement: .navigationBarTrailing) {
-                Button(action: {
-                    self.showSettings.toggle()
-                }) {
-                    Image(systemName: "gearshape").font(.system(size: 18)).foregroundColor(.blue)
-                }
+            .onAppear {
+                self.locationManager.data.load()
             }
-            
-            ToolbarItemGroup(placement: .bottomBar) {
-                HStack {
-                    
+         
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
                     Button(action: {
-                        withAnimation {
-                            self.setCurrentLocation()
-                        }
-                    }, label: {
-                        Image(systemName: "location.fill.viewfinder")
-                    }).padding(.horizontal, 10)
-                    
-                    Spacer()
-                    
-                    Button(action: {
-                        self.addSheet.toggle()
-                    }, label: {
-                        Image(systemName: "plus.circle")
-                    }).padding(.leading, 10)
-                    
+                        self.showSettings.toggle()
+                    }) {
+                        Image(systemName: "gearshape").font(.system(size: 18)).foregroundColor(.blue)
+                    }
+                }
+                
+                ToolbarItemGroup(placement: .bottomBar) {
+                    HStack {
+                        
+                        Button(action: {
+                            withAnimation {
+                                self.setCurrentLocation()
+                            }
+                        }, label: {
+                            Image(systemName: "location.fill.viewfinder")
+                        }).padding(.horizontal, 10)
+                        
+                        Spacer()
+                        
+                        Button(action: {
+                            self.addSheet.toggle()
+                        }, label: {
+                            Image(systemName: "plus.circle")
+                        }).padding(.leading, 10)
+                        
+                    }
                 }
             }
         }
@@ -162,6 +161,6 @@ struct LiveMapView: View {
 
 struct LiveMapView_Previews: PreviewProvider {
     static var previews: some View {
-        LiveMapView(data: AppData(), locationManager: LocationManager())
+        LiveMapView(locationManager: LocationManager())
     }
 }

@@ -1,0 +1,65 @@
+/* 
+  Localizable.strings
+  BeCareful
+
+  Created by Alessio Rubicini on 03/09/22.
+  
+*/
+
+
+// MARK: - Spot types
+
+"type.poorVisibility" = "Poor visibility spot";
+"type.rainDanger" = "Rain Danger";
+"type.railroadCrossing" = "Rail road crossing";
+"type.trafficSignsNotVisible" = "Obstructed/Broken signals";
+"type.crossWalk" = "Pedestrian crossing";
+"type.cycleCrossing" = "Cycle crossing";
+"type.narrowStreet" = "Narrow street";
+"type.narrowParking" = "Narrow Parking";
+"type.dangerousOvertaking" = "Overtaking dangerous";
+"type.dangerousInversion" = "Dangerous Inversion";
+
+// MARK: - MapView
+"mapView.noDangerousSpots" = "No dangerous points nearby (150 meters)";
+"mapView.dangerousSpot %@ %.0f" = "Warning: %@ %.0f meters from you";
+
+// MARK: - SpotView
+
+"spot.viewTitle" = "Selected spot";
+"spot.location" = "Location";
+"spot.info" = "Info";
+"spot.title" = "Title";
+"spot.danger" = "Danger";
+
+// MARK: - ReportNewSpotView
+
+"newSpot.viewTitle" = "New spot";
+"newSpot.info" = "Info";
+"newSpot.title" = "Title";
+"newSpot.type" = "Type";
+"newSpot.location" = "Location";
+"newSpot.input" = "Enter the location";
+
+// MARK: - Buttons
+
+"buttons.cancel" = "Cancel";
+"buttons.ok" = "Close";
+"buttons.confirm" = "Confirm";
+
+
+// MARK: - Settings
+
+"settings.viewTitle" = "Settings";
+"settings.preferences" = "Preferences";
+"settings.haptic" = "Haptic feedback";
+"settings.contact" = "Contact me";
+"settings.info" = "Info";
+"settings.version" = "Version";
+"settings.developer" = "Developer";
+"settings.permissions" = "Manage permissions";
+"settings.close" = "Close";
+
+"settings.privacy.title" = "Privacy policy and Terms of use";
+"settings.privacy" = "We do not collect your personal data and we do not use any user tracking or analysis solutions. We use your device's microphone and voice recognition exclusively for the app functionalities. Your transcripts are stored locally on your iPhone, they do not go outside of it and in fact no connection of any kind is required.";
+"settings.terms" = "The app has been...";

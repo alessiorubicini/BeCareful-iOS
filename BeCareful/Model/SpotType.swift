@@ -11,16 +11,16 @@ import SwiftUI
 enum SpotType: String, Identifiable, Codable, CaseIterable {
     var id: RawValue { rawValue }
     
-    case poorVisibility = "Scarsa visiblità"
-    case rainDanger = "Pericolo pioggia"
-    case railroadCrossing = "Passaggio a livello"
-    case trafficSignsNotVisible = "Segnali ostruiti o rovinati"
-    case crossWalk = "Attraversamento pedonale"
-    case cycleCrossing = "Attraversamento ciclabile"
-    case narrowStreet = "Strada stretta"
-    case narrowParking = "Parcheggio stretto"
-    case dangerousOvertaking = "Sorpasso pericoloso"
-    case dangerousInversion = "Inversione pericolosa"
+    case poorVisibility = "type.poorVisibility"
+    case rainDanger = "type.rainDanger"
+    case railroadCrossing = "type.railroadCrossing"
+    case trafficSignsNotVisible = "type.trafficSignsNotVisible"
+    case crossWalk = "type.crossWalk"
+    case cycleCrossing = "type.cycleCrossing"
+    case narrowStreet = "type.narrowStreet"
+    case narrowParking = "type.narrowParking"
+    case dangerousOvertaking = "type.dangerousOvertaking"
+    case dangerousInversion = "type.dangerousInversion"
     
     var icon: some View {
         switch self {
@@ -35,5 +35,9 @@ enum SpotType: String, Identifiable, Codable, CaseIterable {
             case .dangerousOvertaking: return Image(systemName: "car.2.fill").foregroundColor(.red)
             case .dangerousInversion: return Image(systemName: "arrow.uturn.down.circle.fill").foregroundColor(.red)
         }
+    }
+    
+    var localized: String {
+        return NSLocalizedString(self.rawValue, comment: "")
     }
 }

@@ -1,0 +1,63 @@
+/* 
+  Localizable.strings
+  BeCareful
+
+  Created by Alessio Rubicini on 03/09/22.
+  
+*/
+
+// MARK: - Spot types
+
+"type.poorVisibility" = "Scarsa visibilità";
+"type.rainDanger" = "Pericolo pioggia";
+"type.railroadCrossing" = "Passaggio a livello";
+"type.trafficSignsNotVisible" = "Segnali ostruiti o rovinati";
+"type.crossWalk" = "Attraversamento pedonale";
+"type.cycleCrossing" = "Attraversamento ciclabile";
+"type.narrowStreet" = "Strada stretta";
+"type.narrowParking" = "Parcheggio stretto";
+"type.dangerousOvertaking" = "Sorpasso pericoloso";
+"type.dangerousInversion" = "Inversione pericolosa";
+
+// MARK: - MapView
+"mapView.noDangerousSpots" = "Nessun punto pericoloso nelle vicinanze (150 metri)";
+"mapView.dangerousSpot %@ %.0f" = "Attenzione: %@ a %.0f metri da te";
+
+// MARK: - SpotView
+
+"spot.viewTitle" = "Punto selezionato";
+"spot.location" = "Posizione";
+"spot.info" = "Informazioni";
+"spot.title" = "Titolo";
+"spot.danger" = "Pericolosità";
+
+// MARK: - ReportNewSpotView
+
+"newSpot.viewTitle" = "Nuovo punto";
+"newSpot.info" = "Informazioni";
+"newSpot.title" = "Titolo";
+"newSpot.type" = "Tipo";
+"newSpot.location" = "Posizione";
+"newSpot.input" = "Inserisci la posizione";
+
+// MARK: - Buttons
+
+"buttons.cancel" = "Annulla";
+"buttons.ok" = "Fine";
+"buttons.confirm" = "Conferma";
+
+// MARK: - SettingsView
+
+"settings.viewTitle" = "Impostazioni";
+"settings.preferences" = "Preferenze";
+"settings.haptic" = "Feedback aptico";
+"settings.contact" = "Contattami";
+"settings.info" = "Informazioni";
+"settings.version" = "Versione";
+"settings.developer" = "Sviluppatore";
+"settings.permissions" = "Gestici permessi";
+"settings.close" = "Chiudi";
+
+"settings.privacy.title" = "Privacy policy e Termini di utilizzo";
+"settings.privacy" = "Non raccogliamo i tuoi dati personali e non utilizziamo alcuna soluzione di tracciamento o analisi utenti. Usufruiamo del microfono del tuo dispositivo e del riconoscimento vocale esclusivamente per le funzionalità dell'applicazione. Le trascrizioni sono salvate in locale sul tuo iPhone al sicuro, esse non escono al di fuori di esso e non è infatti richiesta alcuna connessione di alcun tipo.";
+"settings.terms" = "L'applicazione è stata";

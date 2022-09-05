@@ -22,7 +22,7 @@ struct SpotView: View {
         NavigationView {
             Form {
                 
-                Section(header: Text("Posizione")) {
+                Section(header: Text("spot.location")) {
                     
                     Map(coordinateRegion: .constant(MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: spot.latitude, longitude: spot.longitude), span: MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02))), annotationItems: [spot]) { location in
                         
@@ -35,19 +35,19 @@ struct SpotView: View {
                     .listRowInsets(EdgeInsets())
                     .background(Color(UIColor.systemGroupedBackground))
                 
-                Section(header: Text("Informazioni")) {
+                Section(header: Text("spot.info")) {
                     
-                    InfoRow(key: "Nome", value: spot.name)
+                    InfoRow(key: "spot.title", value: spot.title)
                     
                     HStack {
-                        Text("Tipo").fontWeight(.semibold)
+                        Text("spot.type").fontWeight(.semibold)
                         Spacer()
                         Text(spot.type.rawValue)
                         spot.type.icon
                     }
                     
                     HStack {
-                        Text("Pericolosità").fontWeight(.semibold)
+                        Text("spot.danger").fontWeight(.semibold)
                         Spacer()
                         HStack {
                             ForEach(1...3, id: \.self) { num in
@@ -63,14 +63,13 @@ struct SpotView: View {
                 }
                 
             }
-            .navigationTitle("Punto selezionato")
+            .navigationTitle("spot.viewTitle")
             .toolbar {
-                
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
                         presentationMode.wrappedValue.dismiss()
                     } label: {
-                        Text("Fine").fontWeight(.semibold)
+                        Text("buttons.ok").fontWeight(.semibold)
                     }
                 }
             }

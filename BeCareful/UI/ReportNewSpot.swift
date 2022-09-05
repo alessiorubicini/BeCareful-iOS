@@ -12,8 +12,9 @@ import MapKit
 struct ReportNewSpot: View {
     
     // MARK: - View properties
-    @Binding var spot: Spot
+    @ObservedObject var manager: LocationManager
     
+    @State private var spot = Spot()
     @State private var coordinates = CLLocationCoordinate2D(latitude: 37.333747, longitude: -122.011448)
     @State private var coordinatesInput = false
     
@@ -25,24 +26,23 @@ struct ReportNewSpot: View {
         NavigationView {
             Form {
                 
-                Section(header: Text("Informazioni")) {
-                    TextField("Nome", text: $spot.name)
+                Section(header: Text("newSpot.info")) {
+                    TextField("newSpot.title", text: $spot.title)
                     
                     HStack {
-                        Text("Tipo")
+                        Text("newSpot.type")
                         Spacer()
                         Picker("", selection: $spot.type) {
                             ForEach(SpotType.allCases, id: \.self) {
-                                Text($0.rawValue)
-                                    .tag($0)
+                                Text($0.localized).tag($0)
                             }
                         }.pickerStyle(.menu)
                     }
                 }
                 
-                Section(header: Text("Posizione")) {
+                Section(header: Text("newSpot.location")) {
                     
-                    LocationPicker(instructions: "Inserisci le coordinate", coordinates: $coordinates)
+                    LocationPicker(instructions: "", coordinates: $coordinates)
                         .frame(height: 400)
                     
                 }.frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -50,21 +50,22 @@ struct ReportNewSpot: View {
                     .background(Color(UIColor.systemGroupedBackground))
                 
             }
-            .navigationTitle("Nuovo punto")
+            .navigationTitle("newSpot.viewTitle")
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button {
                         presentationMode.wrappedValue.dismiss()
                     } label: {
-                        Text("Annulla").foregroundColor(.red).fontWeight(.semibold)
+                        Text("buttons.cancel").foregroundColor(.red).fontWeight(.semibold)
                     }
                 }
                 
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
+                        self.manager.data.spots.append(self.spot)
                         presentationMode.wrappedValue.dismiss()
                     } label: {
-                        Text("Aggiungi").fontWeight(.semibold)
+                        Text("buttons.confirm").fontWeight(.semibold)
                     }
                 }
             }
@@ -80,6 +81,6 @@ struct ReportNewSpot: View {
 
 struct ReportNewSpot_Previews: PreviewProvider {
     static var previews: some View {
-        ReportNewSpot(spot: .constant(Spot.mocks[0]))
+        ReportNewSpot(manager: LocationManager())
     }
 }

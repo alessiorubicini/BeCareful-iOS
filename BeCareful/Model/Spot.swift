@@ -12,16 +12,16 @@ import SwiftUI
 struct Spot: Identifiable, Codable {
     
     let id: UUID
-    var name: String
+    var title: String
     var type: SpotType
     var dangerLevel: Int
     var latitude: Double
     var longitude: Double
     var address: String
     
-    init(id: UUID = UUID(), name: String = "", type: SpotType = .crossWalk, danger: Int = 1, lat: Double = 37.333, long: Double = -122.006, address: String = "") {
+    init(id: UUID = UUID(), title: String = "", type: SpotType = .crossWalk, danger: Int = 1, lat: Double = 37.333, long: Double = -122.006, address: String = "") {
         self.id = id
-        self.name = name
+        self.title = title
         self.type = type
         self.dangerLevel = danger
         self.latitude = lat
@@ -52,7 +52,7 @@ struct Spot: Identifiable, Codable {
 extension Spot {
     
     static let mocks = [
-        Spot(id: UUID(), name: "Incrocio", type: .poorVisibility, danger: 1, lat: 37.331660, long: -122.032235, address: "Infinite Loop, Cupertino, CA 95014, Stati Uniti")
+        Spot(id: UUID(), title: "Incrocio", type: .trafficSignsNotVisible, danger: 1, lat: 37.330421, long: -122.030958, address: "Infinite Loop, Cupertino, CA 95014, Stati Uniti")
     ]
     
 }

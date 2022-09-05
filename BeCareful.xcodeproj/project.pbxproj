@@ -21,13 +21,13 @@
 		CF2CFCF028C3906700C844C2 /* ReportNewSpot.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2CFCEF28C3906700C844C2 /* ReportNewSpot.swift */; };
 		CF2CFCF228C3907A00C844C2 /* SpotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2CFCF128C3907A00C844C2 /* SpotView.swift */; };
 		CF2CFCF428C3909800C844C2 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2CFCF328C3909800C844C2 /* SettingsView.swift */; };
-		CF2CFCF728C391AB00C844C2 /* LocationPicker in Frameworks */ = {isa = PBXBuildFile; productRef = CF2CFCF628C391AB00C844C2 /* LocationPicker */; };
 		CF2CFCFA28C394FB00C844C2 /* CLLocationCoordinate2D+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2CFCF928C394FB00C844C2 /* CLLocationCoordinate2D+Equatable.swift */; };
 		CF2CFCFE28C3981000C844C2 /* InfoRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2CFCFD28C3981000C844C2 /* InfoRow.swift */; };
 		CF2CFD0028C398EB00C844C2 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2CFCFF28C398EB00C844C2 /* AppData.swift */; };
 		CF2CFD0228C3A3C600C844C2 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2CFD0128C3A3C600C844C2 /* OnboardingView.swift */; };
 		CF2CFD0428C3A3FB00C844C2 /* OnboardingIntroduction.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2CFD0328C3A3FB00C844C2 /* OnboardingIntroduction.swift */; };
 		CF2CFD0628C3A40300C844C2 /* OnboardingSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2CFD0528C3A40300C844C2 /* OnboardingSetup.swift */; };
+		CFEB301128C6180900414A23 /* LocationPicker in Frameworks */ = {isa = PBXBuildFile; productRef = CFEB301028C6180900414A23 /* LocationPicker */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,7 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF2CFCF728C391AB00C844C2 /* LocationPicker in Frameworks */,
+				CFEB301128C6180900414A23 /* LocationPicker in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,7 +125,7 @@
 			children = (
 				CF2CFCB528C38D2D00C844C2 /* BeCarefulApp.swift */,
 				CF2CFCB928C38D3200C844C2 /* Assets.xcassets */,
-				CF2CFCE828C38F8500C844C2 /* Localizable.strings */,
+				CF2CFD0728C3AB6E00C844C2 /* Localization */,
 				CF2CFCDF28C38D7E00C844C2 /* Model */,
 				CF2CFCF828C394ED00C844C2 /* Logic */,
 				CF2CFCEC28C3902900C844C2 /* UI */,
@@ -209,6 +209,14 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		CF2CFD0728C3AB6E00C844C2 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				CF2CFCE828C38F8500C844C2 /* Localizable.strings */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -226,7 +234,7 @@
 			);
 			name = BeCareful;
 			packageProductDependencies = (
-				CF2CFCF628C391AB00C844C2 /* LocationPicker */,
+				CFEB301028C6180900414A23 /* LocationPicker */,
 			);
 			productName = BeCareful;
 			productReference = CF2CFCB228C38D2D00C844C2 /* BeCareful.app */;
@@ -302,7 +310,7 @@
 			);
 			mainGroup = CF2CFCA928C38D2D00C844C2;
 			packageReferences = (
-				CF2CFCF528C391AB00C844C2 /* XCRemoteSwiftPackageReference "LocationPickerForSwiftUI" */,
+				CFEB300F28C6180900414A23 /* XCRemoteSwiftPackageReference "LocationPickerForSwiftUI" */,
 			);
 			productRefGroup = CF2CFCB328C38D2D00C844C2 /* Products */;
 			projectDirPath = "";
@@ -703,7 +711,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		CF2CFCF528C391AB00C844C2 /* XCRemoteSwiftPackageReference "LocationPickerForSwiftUI" */ = {
+		CFEB300F28C6180900414A23 /* XCRemoteSwiftPackageReference "LocationPickerForSwiftUI" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/alessiorubicini/LocationPickerForSwiftUI";
 			requirement = {
@@ -714,9 +722,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		CF2CFCF628C391AB00C844C2 /* LocationPicker */ = {
+		CFEB301028C6180900414A23 /* LocationPicker */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = CF2CFCF528C391AB00C844C2 /* XCRemoteSwiftPackageReference "LocationPickerForSwiftUI" */;
+			package = CFEB300F28C6180900414A23 /* XCRemoteSwiftPackageReference "LocationPickerForSwiftUI" */;
 			productName = LocationPicker;
 		};
 /* End XCSwiftPackageProductDependency section */

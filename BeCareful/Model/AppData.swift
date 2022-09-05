@@ -7,9 +7,9 @@
 
 import Foundation
 
-class AppData: ObservableObject {
+class AppData {
     
-    @Published var spots: [Spot] = []
+    var spots: [Spot] = []
     
     private static var documentsFolder: URL {
         do {
@@ -25,7 +25,9 @@ class AppData: ObservableObject {
     
     init() {
         #if DEBUG
+        print("LOADING DEBUG DATA")
         self.spots = Spot.mocks
+        print(self.spots)
         #else
         self.load()
         #endif

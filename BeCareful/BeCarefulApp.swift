@@ -12,7 +12,6 @@ struct BeCarefulApp: App {
     
     // MARK: - View properties
     
-    @StateObject var data = AppData()
     @StateObject var locationManager = LocationManager()
     
     @AppStorage("isFirstLaunch") private var isFirstLaunch = true
@@ -21,12 +20,9 @@ struct BeCarefulApp: App {
     
     var body: some Scene {
         WindowGroup {
-            LiveMapView(data: data, locationManager: locationManager)
+            LiveMapView(locationManager: locationManager)
                 .sheet(isPresented: $isFirstLaunch) {
                     OnboardingView(isFirstLaunch: $isFirstLaunch)
-                }
-                .onAppear {
-                    self.data.load()
                 }
         }
     }
