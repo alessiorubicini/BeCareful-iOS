@@ -22,7 +22,7 @@ struct LiveMapView: View {
     
     @State private var addSheet = false
     @State private var spotSheet = false
-    @State private var spotSheetContent: Spot? = nil
+    @State private var selectedSpot: Spot? = nil
     
     @State private var showSettings = false
     
@@ -49,7 +49,7 @@ struct LiveMapView: View {
                                 
                                 // On tap open sheet with spot's info
                                 .onTapGesture(count: 1, perform: {
-                                    self.spotSheetContent = location
+                                    self.selectedSpot = location
                                     self.spotSheet.toggle()
                                 })
                             }
@@ -57,8 +57,9 @@ struct LiveMapView: View {
                         }
                         
                         .sheet(isPresented: $spotSheet) {
-                            if let spot = spotSheetContent {
-                                SpotView(spot: spot)
+                            if let spot = selectedSpot {
+                                SpotDetailView(spot: spot, manager: self.locationManager)
+                                    .presentationDetents([.height(300)])
                             }
                         }
                         
@@ -80,8 +81,6 @@ struct LiveMapView: View {
                         }
                         
                     }
-                    
-                    
                     
                 } else {
                     VStack(alignment: .center) {

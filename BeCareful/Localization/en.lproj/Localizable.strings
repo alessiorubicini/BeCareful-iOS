@@ -30,6 +30,7 @@
 "spot.location" = "Location";
 "spot.info" = "Info";
 "spot.title" = "Title";
+"spot.type" = "Type";
 "spot.danger" = "Danger";
 
 // MARK: - ReportNewSpotView
@@ -47,7 +48,6 @@
 "buttons.ok" = "Close";
 "buttons.confirm" = "Confirm";
 
-
 // MARK: - Settings
 
 "settings.viewTitle" = "Settings";
@@ -63,3 +63,11 @@
 "settings.privacy.title" = "Privacy policy and Terms of use";
 "settings.privacy" = "We do not collect your personal data and we do not use any user tracking or analysis solutions. We use your device's microphone and voice recognition exclusively for the app functionalities. Your transcripts are stored locally on your iPhone, they do not go outside of it and in fact no connection of any kind is required.";
 "settings.terms" = "The app has been...";
+
+// MARK: - Onboarding
+
+"onboarding.title" = "Hi! This is BeCareful.";
+"onboarding.description" = "BeCareful is an app that helps you prevent road accidents by allowing you to keep track of dangerous points on the road and warns you when you pass near them.";
+"onboarding.permits" = "To allow BeCareful to perform its functions, access to the GPS location is required.";
+"onboarding.allowGPS" = "Allow use of GPS";
+"onboarding.proceed" = "Proceed to the app";

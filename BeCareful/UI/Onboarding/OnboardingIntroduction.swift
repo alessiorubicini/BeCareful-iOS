@@ -9,7 +9,17 @@ import SwiftUI
 
 struct OnboardingIntroduction: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(alignment: .center) {
+            
+            Text("onboarding.title")
+                .font(.largeTitle)
+                .fontWeight(.bold)
+                .padding()
+            
+            Text("onboarding.description")
+                .multilineTextAlignment(.center)
+                .padding()
+        }
     }
 }
 

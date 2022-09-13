@@ -23,31 +23,33 @@ struct ReportNewSpot: View {
     // MARK: - View body
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             Form {
                 
-                Section(header: Text("newSpot.info")) {
+                Section("newSpot.info") {
                     TextField("newSpot.title", text: $spot.title)
                     
-                    HStack {
-                        Text("newSpot.type")
-                        Spacer()
-                        Picker("", selection: $spot.type) {
-                            ForEach(SpotType.allCases, id: \.self) {
-                                Text($0.localized).tag($0)
-                            }
-                        }.pickerStyle(.menu)
+                    Picker("newSpot.type", selection: $spot.type) {
+                        ForEach(SpotType.allCases, id: \.self) {
+                            Text($0.localized).tag($0)
+                        }
+                    }.pickerStyle(.menu)
+                    
+                    LabeledContent("spot.danger") {
+                        ForEach(1...3, id: \.self) { num in
+                            Image(systemName: num <= spot.dangerLevel ? "circle.fill" : "circle").foregroundColor(.red)
+                                .onTapGesture {
+                                    self.spot.dangerLevel = num
+                                }
+                        }
                     }
                 }
                 
-                Section(header: Text("newSpot.location")) {
-                    
+                // Location input
+                Section("newSpot.location") {
                     LocationPicker(instructions: "", coordinates: $coordinates)
                         .frame(height: 400)
-                    
-                }.frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .listRowInsets(EdgeInsets())
-                    .background(Color(UIColor.systemGroupedBackground))
+                }.modifier(FormFree())
                 
             }
             .navigationTitle("newSpot.viewTitle")

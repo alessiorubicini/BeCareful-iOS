@@ -27,7 +27,7 @@ struct OnboardingSetup: View {
             Button(action: {
                 locationManager.requestAlwaysAuthorization()
             }, label: {
-                Label("Permetti utilizzo GPS", systemImage: "location.fill.viewfinder").frame(maxWidth: 300)
+                Label("onboarding.allowGPS", systemImage: "location.fill.viewfinder").frame(maxWidth: 300)
                     .foregroundColor(.accentColor)
                 
             }).buttonStyle(.bordered)
@@ -42,7 +42,7 @@ struct OnboardingSetup: View {
                 self.isFirstLaunch = false
                 
             }, label: {
-                Text("Procedi all'app").fontWeight(.semibold).frame(maxWidth: 300)
+                Text("onboarding.proceed").fontWeight(.semibold).frame(maxWidth: 300)
             }).buttonStyle(.borderedProminent).controlSize(.large)
                 .padding(.vertical, 20)
             

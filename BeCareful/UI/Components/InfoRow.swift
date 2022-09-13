@@ -9,7 +9,7 @@ import SwiftUI
 
 struct InfoRow: View {
     
-    let key: String
+    let key: LocalizedStringKey
     let value: String
     
     var body: some View {
