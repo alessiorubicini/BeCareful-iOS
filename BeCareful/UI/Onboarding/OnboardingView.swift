@@ -28,6 +28,7 @@ struct OnboardingView: View {
             }
             .tabViewStyle(.page)
             
+            
             HStack {
                 
                 Button(action: {
@@ -35,7 +36,8 @@ struct OnboardingView: View {
                         self.onboardingPage -= 1
                     }
                 }, label: {
-                    Image(systemName: "arrow.backward.circle.fill").font(.system(size: 30))
+                    Image(systemName: "arrow.backward.circle.fill")
+                        .font(.largeTitle)
                 }).disabled(onboardingPage == 1)
                 
                 Spacer()
@@ -45,7 +47,8 @@ struct OnboardingView: View {
                         self.onboardingPage += 1
                     }
                 }, label: {
-                    Image(systemName: "arrow.forward.circle.fill").font(.system(size: 30))
+                    Image(systemName: "arrow.forward.circle.fill")
+                        .font(.largeTitle)
                 }).disabled(onboardingPage == 2).font(.largeTitle)
                 
             }.padding().padding(.horizontal, 30)

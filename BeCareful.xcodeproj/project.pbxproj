@@ -28,6 +28,7 @@
 		CF2CFD0628C3A40300C844C2 /* OnboardingSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2CFD0528C3A40300C844C2 /* OnboardingSetup.swift */; };
 		CF347D6D28D0B84F008AF728 /* FormFreeModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF347D6C28D0B84F008AF728 /* FormFreeModifier.swift */; };
 		CF347D6F28D0BBD2008AF728 /* SpotDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF347D6E28D0BBD2008AF728 /* SpotDetailView.swift */; };
+		CF97BD8A28D59A090058B83E /* StatusCapsule.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF97BD8928D59A090058B83E /* StatusCapsule.swift */; };
 		CFEB301128C6180900414A23 /* LocationPicker in Frameworks */ = {isa = PBXBuildFile; productRef = CFEB301028C6180900414A23 /* LocationPicker */; };
 		CFEB301428C6288F00414A23 /* SpotDataLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEB301328C6288F00414A23 /* SpotDataLogic.swift */; };
 /* End PBXBuildFile section */
@@ -75,6 +76,7 @@
 		CF2CFD0528C3A40300C844C2 /* OnboardingSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSetup.swift; sourceTree = "<group>"; };
 		CF347D6C28D0B84F008AF728 /* FormFreeModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormFreeModifier.swift; sourceTree = "<group>"; };
 		CF347D6E28D0BBD2008AF728 /* SpotDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotDetailView.swift; sourceTree = "<group>"; };
+		CF97BD8928D59A090058B83E /* StatusCapsule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusCapsule.swift; sourceTree = "<group>"; };
 		CFEB301328C6288F00414A23 /* SpotDataLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotDataLogic.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -211,6 +213,7 @@
 			children = (
 				CF2CFCFD28C3981000C844C2 /* InfoRow.swift */,
 				CF347D6C28D0B84F008AF728 /* FormFreeModifier.swift */,
+				CF97BD8928D59A090058B83E /* StatusCapsule.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -372,6 +375,7 @@
 				CF2CFD0428C3A3FB00C844C2 /* OnboardingIntroduction.swift in Sources */,
 				CF2CFCEE28C3903900C844C2 /* LiveMapView.swift in Sources */,
 				CF347D6F28D0BBD2008AF728 /* SpotDetailView.swift in Sources */,
+				CF97BD8A28D59A090058B83E /* StatusCapsule.swift in Sources */,
 				CFEB301428C6288F00414A23 /* SpotDataLogic.swift in Sources */,
 				CF2CFCB628C38D2D00C844C2 /* BeCarefulApp.swift in Sources */,
 				CF2CFD0228C3A3C600C844C2 /* OnboardingView.swift in Sources */,

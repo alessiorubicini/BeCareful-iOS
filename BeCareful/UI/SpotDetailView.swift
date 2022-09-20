@@ -26,8 +26,26 @@ struct SpotDetailView: View {
                 Spacer()
                 
                 Group {
-                    Image(systemName: "square.and.arrow.up.circle")
+                    Menu {
+                        
+                        ShareLink(item: spot.stringCoordinates, subject: Text("Check out this link"), message: Text("If you want to learn Swift, take a look at this website.")) {
+                            Label("Condividi", systemImage: "square.and.arrow.up")
+                        }
+                        
+                        Button(role: .destructive) {
+                            manager.data.removeSpot(with: spot.id)
+                            presentationMode.wrappedValue.dismiss()
+                        } label: {
+                            Label("Elimina", systemImage: "trash")
+                        }
+
+                    } label: {
+                        Image(systemName: "ellipsis.circle")
+                            .foregroundColor(.accentColor)
+                    }
+
                     Image(systemName: "xmark.circle")
+                        .foregroundColor(.accentColor)
                         .onTapGesture {
                             presentationMode.wrappedValue.dismiss()
                         }
@@ -57,6 +75,7 @@ struct SpotDetailView: View {
             }.font(.title3).padding()
             
             Spacer()
+
             
         }
     }

@@ -33,6 +33,10 @@ struct Spot: Identifiable, Codable {
         return CLLocationCoordinate2D(latitude: self.latitude, longitude: self.longitude)
     }
     
+    var stringCoordinates: String {
+        return "\(self.latitude) \(self.longitude)"
+    }
+    
     var color: Color {
         switch self.type {
         case .poorVisibility: return Color.red

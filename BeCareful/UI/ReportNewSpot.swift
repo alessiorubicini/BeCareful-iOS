@@ -39,7 +39,9 @@ struct ReportNewSpot: View {
                         ForEach(1...3, id: \.self) { num in
                             Image(systemName: num <= spot.dangerLevel ? "circle.fill" : "circle").foregroundColor(.red)
                                 .onTapGesture {
-                                    self.spot.dangerLevel = num
+                                    withAnimation {
+                                        self.spot.dangerLevel = num
+                                    }
                                 }
                         }
                     }

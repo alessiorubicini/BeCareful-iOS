@@ -16,6 +16,10 @@ struct BeCarefulApp: App {
     
     @AppStorage("isFirstLaunch") private var isFirstLaunch = true
     
+    init() {
+        UIApplication.shared.isIdleTimerDisabled = false
+    }
+    
     // MARK: - View body
     
     var body: some Scene {

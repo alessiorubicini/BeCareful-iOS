@@ -44,7 +44,7 @@ struct LiveMapView: View {
                             MapAnnotation(coordinate: CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)) {
                                 
                                 VStack {
-                                    location.type.icon.font(.title3)
+                                    location.type.icon.font(.title)
                                 }.foregroundColor(location.color)
                                 
                                 // On tap open sheet with spot's info
@@ -59,7 +59,7 @@ struct LiveMapView: View {
                         .sheet(isPresented: $spotSheet) {
                             if let spot = selectedSpot {
                                 SpotDetailView(spot: spot, manager: self.locationManager)
-                                    .presentationDetents([.height(300)])
+                                    .presentationDetents([.height(350)])
                             }
                         }
                         
@@ -70,7 +70,7 @@ struct LiveMapView: View {
                                 .multilineTextAlignment(.center)
                                 .foregroundColor(locationManager.nearStatus.0 ? Color.red : Color.primary)
                                 .padding().padding(.horizontal)
-                                .background(.ultraThinMaterial).cornerRadius(10)
+                                .background(.thinMaterial).cornerRadius(10)
                                 
                             Spacer()
                             
@@ -106,8 +106,6 @@ struct LiveMapView: View {
             .sheet(isPresented: $addSheet) {
                 ReportNewSpot(manager: self.locationManager)
             }
-            
-            .navigationTitle("SafeDrive")
             .navigationBarTitleDisplayMode(.inline)
             
             .onAppear {
@@ -115,11 +113,26 @@ struct LiveMapView: View {
             }
          
             .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
+                ToolbarItem(placement: .navigationBarLeading) {
                     Button(action: {
-                        self.showSettings.toggle()
-                    }) {
-                        Image(systemName: "gearshape").font(.system(size: 18)).foregroundColor(.blue)
+                        withAnimation {
+                            self.setCurrentLocation()
+                        }
+                    }, label: {
+                        Image(systemName: "location.fill.viewfinder")
+                    }).padding(.horizontal, 10)
+                }
+                
+                ToolbarItem(placement: .principal) {
+                    if locationManager.nearStatus.0 {
+                        Text("mapView.payAttention")
+                            .fontWeight(.semibold)
+                            .foregroundColor(.red)
+                            
+                    } else {
+                        Text("mapView.goOn")
+                            .fontWeight(.semibold)
+                            .foregroundColor(.green)
                     }
                 }
                 
@@ -127,12 +140,10 @@ struct LiveMapView: View {
                     HStack {
                         
                         Button(action: {
-                            withAnimation {
-                                self.setCurrentLocation()
-                            }
-                        }, label: {
-                            Image(systemName: "location.fill.viewfinder")
-                        }).padding(.horizontal, 10)
+                            self.showSettings.toggle()
+                        }) {
+                            Image(systemName: "gearshape")
+                        }
                         
                         Spacer()
                         
@@ -150,7 +161,6 @@ struct LiveMapView: View {
     
     // Set current location on user's position
     private func setCurrentLocation() {
-        print("Setting current location")
         cancellable = locationManager.$currentLocation.sink { location in
             self.region = MKCoordinateRegion(center: self.locationManager.manager.location?.coordinate ?? CLLocationCoordinate2D(), span: MKCoordinateSpan(latitudeDelta: 0.03, longitudeDelta: 0.03))
         }

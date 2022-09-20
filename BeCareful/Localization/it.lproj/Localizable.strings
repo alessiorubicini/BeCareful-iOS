@@ -20,8 +20,11 @@
 "type.dangerousInversion" = "Inversione pericolosa";
 
 // MARK: - MapView
+
 "mapView.noDangerousSpots" = "Nessun punto pericoloso nelle vicinanze (150 metri)";
 "mapView.dangerousSpot %@ %.0f" = "Attenzione: %@ a %.0f metri da te";
+"mapView.goOn" = "Procedi";
+"mapView.payAttention" = "Fai attenzione";
 
 // MARK: - SpotView
 

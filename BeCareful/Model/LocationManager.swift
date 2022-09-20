@@ -62,7 +62,7 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
                 if self.nearStatus.0 == false {
                     
                     // Send notification
-                    //sendNotification(message: message)
+
                     
                     // Generate custom haptic feedback
                     
